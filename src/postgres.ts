@@ -3,7 +3,7 @@ import { Async } from "boardgame.io/internal";
 import { Sequelize, Options, Op } from "sequelize";
 import { Match, matchAttributes } from "./entities/match";
 
-export class PostgresStore extends Async {
+class PostgresStore extends Async {
   private _sequelize: Sequelize;
 
   constructor(uri: string, options?: Options);
@@ -234,3 +234,10 @@ export class PostgresStore extends Async {
     return this.listMatches(opts);
   }
 }
+
+export {
+  Match,
+  matchAttributes,
+}
+
+export default PostgresStore;
